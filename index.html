@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Smart Trading Chart Breakdown &amp; Trend Analyzer</title>
+  <meta name="description" content="Browser-based technical analysis overlay: trend, breakout/breakdown, market structure, and multi-factor signal confidence - runs entirely client-side." />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/chart.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="sta-header">
+    <div class="sta-header__brand">
+      <span class="sta-header__logo">◆</span>
+      <span class="sta-header__title">Smart Trading Analyzer</span>
+    </div>
+    <div class="sta-header__source">
+      Data source: <strong id="sta-data-source-label">Simulated</strong>
+    </div>
+  </header>
+
+  <main class="sta-main">
+    <section class="sta-chart-section">
+      <div class="sta-chart-section__toolbar" id="sta-chart-toggles"></div>
+      <div class="sta-chart-container">
+        <canvas id="sta-chart-canvas"></canvas>
+        <div id="sta-overlay-mount" class="sta-overlay-mount"></div>
+      </div>
+    </section>
+
+    <section class="sta-side">
+      <div class="sta-tabs">
+        <div class="sta-tabs__bar" role="tablist">
+          <button type="button" class="sta-tabs__btn is-active" data-tab="signal">Signal</button>
+          <button type="button" class="sta-tabs__btn" data-tab="import">Data</button>
+          <button type="button" class="sta-tabs__btn" data-tab="history">History</button>
+          <button type="button" class="sta-tabs__btn" data-tab="backtest">Backtest</button>
+          <button type="button" class="sta-tabs__btn" data-tab="settings">Settings</button>
+        </div>
+
+        <div class="sta-tabs__panel" id="sta-tab-signal">
+          <div id="sta-signal-card-mount"></div>
+        </div>
+
+        <div class="sta-tabs__panel" id="sta-tab-import" hidden>
+          <div id="sta-import-mount"></div>
+        </div>
+
+        <div class="sta-tabs__panel" id="sta-tab-history" hidden>
+          <div id="sta-history-mount"></div>
+        </div>
+
+        <div class="sta-tabs__panel" id="sta-tab-backtest" hidden>
+          <div id="sta-backtest-mount"></div>
+        </div>
+
+        <div class="sta-tabs__panel" id="sta-tab-settings" hidden>
+          <div id="sta-settings-mount"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sta-footer">
+    <p>
+      Analytical tool only - not financial advice. Signal confidence reflects technical
+      confirmations, not a guaranteed probability of future price movement. See
+      <a href="docs/architecture.md">docs</a> for methodology and limitations.
+    </p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
