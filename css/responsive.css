@@ -1,0 +1,96 @@
+/* responsive.css - mobile-first adjustments layered on top of main.css */
+
+@media (max-width: 980px) {
+  .sta-main {
+    grid-template-columns: 1fr;
+  }
+
+  .sta-chart-container {
+    min-height: 320px;
+  }
+
+  .sta-side {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .sta-header {
+    padding: var(--sta-space-2) var(--sta-space-3);
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .sta-header__title {
+    font-size: 14px;
+  }
+
+  .sta-main {
+    padding: var(--sta-space-2);
+    gap: var(--sta-space-2);
+    padding-bottom: calc(var(--sta-space-4) + env(safe-area-inset-bottom));
+  }
+
+  .sta-chart-section__toolbar {
+    font-size: 11px;
+    gap: var(--sta-space-2);
+  }
+
+  .sta-chart-container {
+    min-height: 260px;
+  }
+
+  .sta-panel {
+    width: 168px;
+    font-size: 11px;
+  }
+
+  .sta-panel--compact {
+    width: 140px;
+  }
+
+  .sta-signal-card__decision {
+    font-size: 22px;
+  }
+
+  .sta-signal-card__confidence {
+    font-size: 16px;
+  }
+
+  .sta-tabs__btn {
+    padding: var(--sta-space-2);
+    font-size: 11px;
+  }
+
+  .sta-settings__weights {
+    grid-template-columns: 1fr;
+  }
+
+  .sta-history__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sta-import__sim-row {
+    flex-direction: column;
+    gap: var(--sta-space-2);
+  }
+
+  .sta-backtest__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="text"], input[type="number"], textarea, select, .sta-btn {
+    font-size: 14px; /* avoid iOS auto-zoom on focus */
+  }
+}
+
+@media (max-width: 380px) {
+  .sta-panel {
+    width: 132px;
+  }
+}

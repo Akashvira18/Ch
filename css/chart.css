@@ -1,0 +1,27 @@
+/* chart.css - chart container and canvas styling */
+
+.sta-chart-container {
+  position: relative;
+  flex: 1;
+  min-height: 420px;
+  background: var(--sta-bg);
+  border: 1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  overflow: hidden;
+}
+
+#sta-chart-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sta-overlay-mount {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sta-overlay-mount .sta-panel {
+  pointer-events: auto;
+}

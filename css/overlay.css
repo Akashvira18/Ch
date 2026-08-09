@@ -1,0 +1,107 @@
+/* overlay.css - floating draggable analyzer panel + compact readout */
+
+.sta-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 240px;
+  background: rgba(16, 20, 29, 0.94);
+  border: 1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  font-size: 12px;
+  transition: opacity 0.15s ease;
+}
+
+.sta-panel--dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.sta-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--sta-border);
+  cursor: grab;
+  touch-action: none;
+}
+
+.sta-panel__title {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--sta-accent);
+}
+
+.sta-panel__controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sta-panel__opacity {
+  width: 48px;
+  accent-color: var(--sta-accent);
+}
+
+.sta-panel__btn {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid var(--sta-border);
+  border-radius: 4px;
+  color: var(--sta-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+}
+
+.sta-panel__btn:hover {
+  color: var(--sta-text);
+  border-color: var(--sta-accent);
+}
+
+.sta-panel__body {
+  padding: 10px;
+}
+
+.sta-panel--minimized .sta-panel__body {
+  display: none;
+}
+
+.sta-panel--compact {
+  width: 176px;
+}
+
+.sta-panel--compact .sta-panel__body {
+  padding: 6px 8px;
+}
+
+/* Compact readout rows shown inside the panel body */
+.sta-readout__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
+  gap: 8px;
+}
+
+.sta-readout__row span {
+  color: var(--sta-text-muted);
+}
+
+.sta-readout__row strong {
+  font-family: var(--sta-font-mono);
+  text-align: right;
+}
+
+.sta-readout__divider {
+  height: 1px;
+  background: var(--sta-border);
+  margin: 6px 0;
+}
